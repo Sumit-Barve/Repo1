@@ -8,9 +8,13 @@ pipeline {
             }
         }
 
-        stage('Test') {
+        stage('Custom Groovy') {
             steps {
-                echo 'Testing the application...'
+                script {
+                    def name = "Sumit"
+                    def msg = "Hello, ${name}! Jenkins is using Groovy 😄"
+                    echo msg
+                }
             }
         }
 
